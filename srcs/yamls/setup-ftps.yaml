@@ -59,6 +59,20 @@ spec:
           name: "ftps-port-zero"
         - containerPort: 2101
           name: "ftps-port-one"
+        #livenessProbe:
+        #  exec:
+        #    command:
+        #    - sh
+        #    - health.sh
+        #  initialDelaySeconds: 5
+        #  periodSeconds: 3
+        volumeMounts:
+        - name: ftps-persistent-storage
+          mountPath: /home/admin
+      volumes:
+      - name: ftps-persistent-storage
+        persistentVolumeClaim:
+          claimName: ftps-pv-claim
   selector:
     matchLabels:
       app: ftps
