@@ -16,5 +16,6 @@ COPY telegraf.conf /etc/telegraf
 #COPY /src/influxdb.conf /etc
 RUN apk add openrc
 
+COPY liveness.sh /
 COPY setup-influxdb.sh /
 CMD ["sh", "/setup-influxdb.sh"]

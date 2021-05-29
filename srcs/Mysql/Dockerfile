@@ -8,5 +8,6 @@ COPY setup_mysql.sh /
 COPY src/create_tables.sql /
 COPY src/wp_db.sql /
 
+COPY liveness.sh /
 RUN chmod +x setup_mysql.sh
 CMD ["sh", "/setup_mysql.sh"]

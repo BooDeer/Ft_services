@@ -8,4 +8,5 @@ RUN adduser admin -D && echo "admin:admin" |chpasswd
 RUN chmod 750 /home/admin && chown -R admin: /home/admin
 COPY setup_ftps.sh /
 RUN chmod +x setup_ftps.sh
+COPY liveness.sh /
 CMD ["sh", "/setup_ftps.sh"]

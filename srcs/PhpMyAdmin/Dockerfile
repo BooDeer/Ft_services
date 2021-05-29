@@ -18,5 +18,6 @@ COPY config.inc.php /www/phpMyAdmin
 RUN mkdir /www/phpMyAdmin/tmp && chmod 777 /www/phpMyAdmin/tmp
 
 COPY setup_phpmyadmin.sh /
+COPY liveness.sh /
 
 CMD ["sh", "setup_phpmyadmin.sh"]

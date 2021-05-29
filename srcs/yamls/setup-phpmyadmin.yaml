@@ -35,6 +35,13 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - liveness.sh
+            initialDelaySeconds: 5
+            periodSeconds: 3
   selector:
     matchLabels:
       app: phpmyadmin

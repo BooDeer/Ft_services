@@ -59,13 +59,13 @@ spec:
           name: "ftps-port-zero"
         - containerPort: 2101
           name: "ftps-port-one"
-        #livenessProbe:
-        #  exec:
-        #    command:
-        #    - sh
-        #    - health.sh
-        #  initialDelaySeconds: 5
-        #  periodSeconds: 3
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - liveness.sh
+          initialDelaySeconds: 5
+          periodSeconds: 3
         volumeMounts:
         - name: ftps-persistent-storage
           mountPath: /home/admin
