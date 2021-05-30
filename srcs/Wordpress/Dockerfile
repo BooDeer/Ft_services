@@ -17,7 +17,7 @@ RUN tar xzvf latest.tar.gz
 RUN rm -rf latest.tar.gz
 COPY wp-config.php /www/wordpress
 RUN mv wordpress/ /www/wordpress
-RUN echo "<h1>Hello world!</h1>" > /www/index.html 
+#RUN echo "<h1>Hello world!</h1>" > /www/index.html 
 #RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
 COPY liveness.sh /
 CMD ["sh", "/setup_nginx.sh"]
